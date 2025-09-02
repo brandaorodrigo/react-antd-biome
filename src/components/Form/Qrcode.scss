@@ -1,0 +1,21 @@
+.Qrcode {
+    position: relative;
+
+    .torch {
+        position: absolute;
+        right: 5px;
+        top: 10px;
+        z-index: 99;
+    }
+
+    .switch {
+        position: absolute;
+        left: 5px;
+        top: 10px;
+        z-index: 99;
+    }
+
+    .mirror {
+        transform: scaleX(-1);
+    }
+}

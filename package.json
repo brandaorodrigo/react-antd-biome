@@ -1,0 +1,38 @@
+{
+    "name": "react",
+    "version": "1.0.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "tsc && vite build",
+        "locales": "node locales.cjs",
+        "production": "vite --host --mode production",
+        "staging": "vite --host --mode staging",
+        "start": "vite --host"
+    },
+    "dependencies": {
+        "@ant-design/icons": "^6.0.0",
+        "@biomejs/biome": "^2.2.2",
+        "@types/node": "^24.3.0",
+        "@types/react": "^18.3.24",
+        "@types/react-dom": "^18.3.7",
+        "@types/react-router-dom": "^5.3.3",
+        "@vitejs/plugin-react": "^5.0.2",
+        "antd": "^5.27.2",
+        "axios": "^1.11.0",
+        "dayjs": "^1.11.18",
+        "libphonenumber-js": "^1.12.15",
+        "react": "^18.3.1",
+        "react-country-flag": "^3.1.0",
+        "react-dom": "^18.3.1",
+        "react-i18next": "^15.7.3",
+        "react-icons": "^5.5.0",
+        "react-router-dom": "^7.8.2",
+        "react-zxing": "^2.1.0",
+        "sass": "^1.92.0",
+        "typescript": "^5.9.2",
+        "vite": "^7.1.4",
+        "vite-plugin-checker": "^0.10.3",
+        "xlsx": "^0.18.5"
+    }
+}

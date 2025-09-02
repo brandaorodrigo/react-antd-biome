@@ -1,0 +1,4 @@
+*.local
+.vite
+dist
+node_modules

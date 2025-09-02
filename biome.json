@@ -1,0 +1,95 @@
+{
+    "$schema": "https://biomejs.dev/schemas/2.2.2/schema.json",
+    "formatter": {
+        "enabled": true,
+        "indentStyle": "space",
+        "indentWidth": 4,
+        "lineEnding": "lf",
+        "lineWidth": 100
+    },
+    "javascript": {
+        "formatter": {
+            "jsxQuoteStyle": "single",
+            "quoteStyle": "single"
+        }
+    },
+    "assist": {
+        "actions": {
+            "source": {
+                "useSortedAttributes": {
+                    "level": "on",
+                    "options": {
+                        "sortOrder": "natural"
+                    }
+                }
+            }
+        }
+    },
+    "linter": {
+        "enabled": true,
+        "rules": {
+            "a11y": {
+                "noStaticElementInteractions": "off",
+                "useKeyWithClickEvents": "off"
+            },
+            "correctness": {
+                "useExhaustiveDependencies": "off",
+                "noNestedComponentDefinitions": "off"
+            },
+            "recommended": true,
+            "security": {
+                "noDangerouslySetInnerHtml": "off"
+            },
+            "style": {
+                "noUnusedTemplateLiteral": {
+                    "fix": "safe",
+                    "level": "error",
+                    "options": {}
+                },
+                "noUselessElse": {
+                    "fix": "safe",
+                    "level": "error",
+                    "options": {}
+                },
+                "useBlockStatements": {
+                    "fix": "safe",
+                    "level": "error",
+                    "options": {}
+                },
+                "useSelfClosingElements": {
+                    "fix": "safe",
+                    "level": "error",
+                    "options": {}
+                },
+                "useTemplate": {
+                    "fix": "safe",
+                    "level": "error",
+                    "options": {}
+                }
+            },
+            "suspicious": {
+                "noDoubleEquals": {
+                    "fix": "safe",
+                    "level": "error",
+                    "options": {}
+                },
+                "noExplicitAny": "off",
+                "noConsole": {
+                    "level": "off",
+                    "options": {}
+                }
+            }
+        }
+    },
+    "files": {
+        "includes": ["src/**"]
+    },
+    "overrides": [
+        {
+            "formatter": {
+                "lineWidth": 320
+            },
+            "includes": ["src/Routes.tsx"]
+        }
+    ]
+}
