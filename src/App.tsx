@@ -226,9 +226,6 @@ const App: React.FC = () => {
 
     return (
         <ConfigProvider
-            csp={{
-                nonce: '{{nonce}}',
-            }}
             form={{
                 requiredMark: 'optional',
                 scrollToFirstError: true,
@@ -251,13 +248,13 @@ const App: React.FC = () => {
                     },
                 },
                 token: {
-                    borderRadius: 6,
-                    borderRadiusLG: 8,
+                    borderRadius: 8,
+                    borderRadiusLG: 16,
                     controlHeight: 40,
                     controlHeightLG: 40,
                     controlHeightSM: 24,
                     controlOutline: '00000000',
-                    fontFamily: 'Nunito',
+                    fontFamily: 'Readex Pro',
                     fontSizeLG: 16,
                     fontSize: 14,
                     fontSizeSM: 12,
