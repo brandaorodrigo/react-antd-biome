@@ -77,7 +77,8 @@
                 "noConsole": {
                     "level": "off",
                     "options": {}
-                }
+                },
+                "noTemplateCurlyInString": "off"
             }
         }
     },

@@ -1,5 +1,5 @@
 import 'antd/dist/reset.css';
-import { ConfigProvider, Typography } from 'antd';
+import { ConfigProvider } from 'antd';
 import ptBR from 'antd/es/locale/pt_BR';
 import axios from 'axios';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
@@ -222,7 +222,7 @@ axios.interceptors.response.use(
 // =================================================================================================
 
 const App: React.FC = () => {
-    const router = user?.token ? routes.private : routes.public;
+    const router = !user?.token ? routes.private : routes.public;
 
     return (
         <ConfigProvider
@@ -232,23 +232,39 @@ const App: React.FC = () => {
             form={{
                 requiredMark: 'optional',
                 scrollToFirstError: true,
-                validateMessages: {
-                    // biome-ignore lint/suspicious/noTemplateCurlyInString: Vite
-                    required: '${label} obrigatório',
-                },
+                validateMessages: { required: '${label} obrigatório' },
             }}
             locale={ptBR}
-            renderEmpty={(component) => {
-                if (component === 'Table') {
-                    return (
-                        <Typography.Title level={3} style={{ lineHeight: 5 }}>
-                            Nada encontrado
-                        </Typography.Title>
-                    );
-                }
-                return 'Nada encontrado';
+            renderEmpty={() => 'Nada encontrado'}
+            theme={{
+                cssVar: true,
+                components: {
+                    Button: {
+                        colorPrimary: '#00b96b',
+                    },
+                    Input: {
+                        colorPrimary: '#eb2f96',
+                        colorHighlight: '#ff00ff',
+                    },
+                    Menu: {
+                        colorPrimary: '#00ff00',
+                    },
+                },
+                token: {
+                    borderRadius: 6,
+                    borderRadiusLG: 8,
+                    controlHeight: 40,
+                    controlHeightLG: 40,
+                    controlHeightSM: 24,
+                    controlOutline: '00000000',
+                    fontFamily: 'Nunito',
+                    fontSizeLG: 16,
+                    fontSize: 14,
+                    fontSizeSM: 12,
+                    lineWidth: 2,
+                    lineHeight: 1,
+                },
             }}
-            theme={{ cssVar: true }}
         >
             <RouterProvider router={createBrowserRouter(router, { basename: '/' })} />
         </ConfigProvider>

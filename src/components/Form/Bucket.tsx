@@ -2,7 +2,6 @@ import { App, type GetProp, Upload, type UploadProps } from 'antd';
 import type { UploadFile } from 'antd/es/upload/interface';
 import axiosOriginal, { type Axios } from 'axios';
 import dayjs from 'dayjs';
-import { t } from 'i18next';
 import { useEffect, useState } from 'react';
 import { AiOutlineAudio } from 'react-icons/ai';
 import { BsTextLeft } from 'react-icons/bs';
@@ -108,7 +107,7 @@ const Bucket: React.FC<BucketProps> = ({
         });
         const preSigned = temporary?.data?.url;
         if (!preSigned) {
-            const message = t('Erro ao ler o arquivo');
+            const message = 'Erro ao ler o arquivo';
             notification.error({ message });
             throw message;
         }
@@ -120,7 +119,7 @@ const Bucket: React.FC<BucketProps> = ({
             });
             return preSigned.split('?')?.[0];
         } catch (_error: any) {
-            const message = t('Ocorreu um erro inesperado');
+            const message = 'Ocorreu um erro inesperado';
             notification.error({ message });
             throw message;
         }
@@ -136,7 +135,7 @@ const Bucket: React.FC<BucketProps> = ({
             (allow === 'text' && !text.includes(extension)) ||
             (allow === 'all' && ![...image, ...audio, ...text].includes(extension))
         ) {
-            const content = t('Tipo de arquivo não autorizado');
+            const content = 'Tipo de arquivo não autorizado';
             notification.error({ message: content });
             onError(content);
             return;

@@ -150,7 +150,6 @@ const rule: ruleProps = (name, country = 'BR', message = '') => ({
             if (!message && typeof check === 'string') {
                 return Promise.reject(new Error(check));
             }
-            // biome-ignore lint/suspicious/noTemplateCurlyInString: Vite
             return Promise.reject(new Error(message !== '' ? message : '${label} inválido'));
         }
         return Promise.resolve();
